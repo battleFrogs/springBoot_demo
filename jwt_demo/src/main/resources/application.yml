@@ -1,0 +1,9 @@
+server:
+  port: 8085
+
+jwt:
+  secret: 123431
+  tokenHeader: Authorization
+  tokenPrefix: gjc-
+  expiration: 86400
+  antMatchers: /userLogin/wxLogin,/userLogin/loginStatus,/roleChange/**,/appIndex/**

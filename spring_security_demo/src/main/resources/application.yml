@@ -1,0 +1,32 @@
+server:
+  port: 8086
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.73.133:3306/gjc_test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver # 新版mysqlConnect 6.0支持,且需要配置时区
+
+# JWT配置
+jwt:
+  # 密匙KEY
+  secret: JWTSecret
+  # HeaderKEY
+  tokenHeader: Authorization
+  # Token前缀字符
+  tokenPrefix: Sans-
+  # 过期时间 单位秒 1天后过期=86400 7天后过期=604800
+  expiration: 86400
+  # 配置不需要认证的接口
+  antMatchers: /index/**,/login/**,/favicon.ico
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: true
+  mapper-locations: classpath:com/gjc/spring_security_demo/dao/*.xml
+  type-aliases-package: com.gjc.spring_security_demo.entity
