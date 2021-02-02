@@ -1,0 +1,19 @@
+server:
+  port: 8087
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.73.133:3306/gjc_test?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=utf8&useSSL=false
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver # 新版mysqlConnect 6.0支持,且需要配置时区
+
+
+mybatis-plus:
+  global-config:
+    db-config:
+      id-type: auto
+      table-underline: true
+  mapper-locations: classpath:com/gjc/mybatisplus_demo/mapper/*.xml
+  type-aliases-package: com.gjc.mybatisplus_demo.entity

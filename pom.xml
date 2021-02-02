@@ -29,6 +29,7 @@
         <module>mongodb_demo</module>
         <module>redis-demo</module>
         <module>spring_security_demo</module>
+        <module>mybatisplus_demo</module>
     </modules>
 
     <dependencies>
