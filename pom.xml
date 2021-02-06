@@ -30,6 +30,7 @@
         <module>redis-demo</module>
         <module>spring_security_demo</module>
         <module>mybatisplus_demo</module>
+        <module>kafka_demo</module>
     </modules>
 
     <dependencies>
