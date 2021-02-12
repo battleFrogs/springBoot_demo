@@ -31,6 +31,7 @@
         <module>spring_security_demo</module>
         <module>mybatisplus_demo</module>
         <module>kafka_demo</module>
+<!--        <module>test_demo</module>-->
     </modules>
 
     <dependencies>
