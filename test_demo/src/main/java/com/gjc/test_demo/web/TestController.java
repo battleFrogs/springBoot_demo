@@ -52,6 +52,17 @@ public class TestController {
     }
 
 
-
-
+    /**
+     * 获取数据库数据的请求
+     *
+     * @param id 主键Id
+     * @return resultData
+     */
+    @PostMapping("/postDetailTest")
+    public ResultData postDetailTest(Long id) {
+        ResultData resultData = new ResultData(ResultData.ResultEnum.SUCCESS.getCode(), "成功");
+        String result = testService.test(id);
+        resultData.addData("result", result);
+        return resultData;
+    }
 }

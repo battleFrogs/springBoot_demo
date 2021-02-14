@@ -3,11 +3,14 @@ package com.gjc.test_demo.web;
 import com.alibaba.fastjson.JSONObject;
 import com.gjc.common.constant.ResultData;
 import com.gjc.test_demo.param.PostTestParam;
+import com.gjc.test_demo.service.TestService;
 import com.gjc.test_demo.vo.PostTestVo;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
@@ -28,12 +31,19 @@ class TestControllerTest {
     @InjectMocks
     private TestController testController;
 
+    @Mock
+    private TestService testService;
+
     private MockMvc mockMvc;
 
 
     @BeforeEach
     public void setUp() {
         this.mockMvc = MockMvcBuilders.standaloneSetup(testController).build();  // 初始化操作
+
+        // 对testService 进行mock数据处理
+        Mockito.when(testService.test(Mockito.anyLong())).thenReturn("是我");
+
     }
 
     @Test
@@ -79,6 +89,19 @@ class TestControllerTest {
 
         Assertions.assertEquals(result.getAddName(),"gjc加上");
         Assertions.assertEquals(result.getAddAge(),21);
+
+    }
+
+    @Test
+    public void postDetailTest() throws Exception {
+
+        MockHttpServletRequestBuilder builder = MockMvcRequestBuilders.post("/postDetailTest")
+                .contentType(MediaType.APPLICATION_FORM_URLENCODED_VALUE)
+                .param("id", "1");
+
+        MvcResult mvcResult = mockMvc.perform(builder).andReturn();
+
+        System.out.println(mvcResult.getResponse().getContentAsString(StandardCharsets.UTF_8));
 
     }
 }

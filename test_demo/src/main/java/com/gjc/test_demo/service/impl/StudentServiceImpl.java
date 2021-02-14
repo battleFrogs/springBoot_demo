@@ -22,4 +22,8 @@ public class StudentServiceImpl extends ServiceImpl<StudentMapper, Student>
     private StudentMapper studentMapper;
 
 
+    @Override
+    public Student getStudentById(Long id) {
+        return this.lambdaQuery().eq(Student::getId, id).one();
+    }
 }

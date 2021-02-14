@@ -14,9 +14,16 @@ public class TestServiceImpl implements TestService {
     private StudentService studentService;
 
     @Override
-    public String test() {
-        Student stu = studentService.lambdaQuery().eq(Student::getId, 1).one();
+    public String test(Long id) {
+        Student stu = studentService.lambdaQuery().eq(Student::getId, id).one();
         return stu.getName();
+    }
+
+
+    @Override
+    public String testAgain(Long id) {
+        Student student = studentService.getStudentById(id);
+        return student.getName();
     }
 
 
