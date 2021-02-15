@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.gjc.mybatis_demo.mapper.StudentMapper">
+
+
+
+
+    <insert id="insert" parameterType="com.gjc.mybatis_demo.model.Student">
+        INSERT INTO `student`(`name`, `created`)
+        VALUES (#{name}, #{created})
+    </insert>
+
+
+
+</mapper>
