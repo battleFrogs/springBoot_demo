@@ -16,7 +16,9 @@ server:
 mybatis:
   mapper-locations: classpath:com/gjc/mybatis_demo/mapper/*.xml  #注意：一定要对应mapper映射xml文件的所在路径
   type-aliases-package: com.gjc.mybatis_demo.model  # 注意：对应实体类的路径
-
+  #原生配置
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 pagehelper:
   helperDialect: mysql
   reasonable: true
