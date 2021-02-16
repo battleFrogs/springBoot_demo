@@ -10,4 +10,23 @@
         values (#{stuId}, #{result});
 
     </insert>
+
+
+    <delete id="deleteResult" parameterType="java.util.List">
+        delete from result_info where stu_id in
+        <foreach collection="list" separator="," open="(" close=")" index="index" item="item">
+            #{item}
+        </foreach>
+    </delete>
+
+
+    <select id="selectResultInfoList" resultType="com.gjc.mybatis_demo.model.ResultInfo">
+        select *
+        from result_info r
+        <if test="name!=null and name!=''">
+            where r.result like CONCAT(CONCAT('%', #{name}), '%')
+        </if>
+    </select>
+
+
 </mapper>

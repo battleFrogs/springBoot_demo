@@ -18,7 +18,9 @@ mybatis:
   type-aliases-package: com.gjc.mybatis_demo.model  # 注意：对应实体类的路径
   #原生配置
   configuration:
-    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl # 打印日志
+    map-underscore-to-camel-case: true # 下划线映射
+
 pagehelper:
   helperDialect: mysql
   reasonable: true

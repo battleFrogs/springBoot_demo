@@ -13,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
@@ -151,6 +152,33 @@ public class TestController {
     }
 
 
+    /**
+     * 通过ids删除列表
+     *
+     * @param ids id集合列表
+     * @return resultData 结果集
+     */
+    @GetMapping("/deleteByIds")
+    public ResultData deleteByIds(@RequestParam("ids") List<Long> ids) {
+        ResultData resultData = new ResultData(ResultData.ResultEnum.SUCCESS.getCode(),
+                "成功");
+        boolean b = resultMapper.deleteResult(ids);
+        log.info("保存状态：{}", b);
+        return resultData;
+    }
 
-
+    /**
+     * 通过名称模糊查询
+     *
+     * @param name 结果
+     * @return resultData
+     */
+    @GetMapping("/selectResultByName")
+    public ResultData selectResultByName(String name) {
+        ResultData resultData = new ResultData(ResultData.ResultEnum.SUCCESS.getCode(),
+                "成功");
+        List<ResultInfo> resultInfos = resultMapper.selectResultInfoList(name);
+        resultData.addData("result", resultInfos);
+        return resultData;
+    }
 }
