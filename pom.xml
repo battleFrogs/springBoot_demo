@@ -36,6 +36,7 @@
         <module>shiro_demo</module>
         <module>logback_demo</module>
         <module>springboot_base</module>
+        <module>jpa_demo</module>
     </modules>
 
     <dependencies>

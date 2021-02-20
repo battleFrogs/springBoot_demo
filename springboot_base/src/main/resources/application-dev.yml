@@ -8,3 +8,12 @@ student:
 teacher:
   teach: math
   school: high
+
+spring:
+  jackson:
+    # 字符串时间转date时间
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    # 默认返回前端时间戳
+    serialization:
+      write-dates-as-timestamps: true
