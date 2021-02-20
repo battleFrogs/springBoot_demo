@@ -34,6 +34,8 @@
         <module>test_demo</module>
         <module>mybatis_demo</module>
         <module>shiro_demo</module>
+        <module>logback_demo</module>
+        <module>springboot_base</module>
     </modules>
 
     <dependencies>

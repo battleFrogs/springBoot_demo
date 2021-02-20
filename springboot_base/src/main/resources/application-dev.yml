@@ -1,0 +1,10 @@
+server:
+  port: 8092
+
+student:
+  name: gjc
+  age: 15
+
+teacher:
+  teach: math
+  school: high
