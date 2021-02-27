@@ -1,3 +1,8 @@
+### file:./config/ - 优先级最高（项目根路径下的config）
+#   file:./ - 优先级第二 -（项目根路径下）
+#   classpath:/config/ - 优先级第三（项目resources/config下）
+#   classpath:/ - 优先级第四（项目resources根目录）
+
 spring:
   profiles:
     active: dev

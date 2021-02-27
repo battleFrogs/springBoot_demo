@@ -38,6 +38,7 @@
         <module>springboot_base</module>
         <module>jpa_demo</module>
         <module>quartz_demo</module>
+        <module>springboot_controller</module>
     </modules>
 
     <dependencies>
