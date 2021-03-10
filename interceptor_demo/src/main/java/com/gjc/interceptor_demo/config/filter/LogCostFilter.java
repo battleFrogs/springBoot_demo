@@ -11,7 +11,7 @@ import java.io.IOException;
 // 第二种配置 各自配置
 //@Component
 //@Order(Ordered.HIGHEST_PRECEDENCE)  @Order(1)//控制过滤器的级别
-//@WebFilter(urlPatterns = "*.json", filterName = "reqResFilter")
+//@WebFilter(urlPatterns = "*.json", filterName = "reqResFilter") // 设置过滤器规则
 public class LogCostFilter implements Filter {
 
 

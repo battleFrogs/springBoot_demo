@@ -49,7 +49,7 @@ public class WebCustomConfiguration implements WebMvcConfigurer {
 
 
     /**
-     * 具体将拦截器注入的方法实现
+     * 具体将拦截器注入的方法实现  ,注册拦截器
      *
      * @param registry
      */
